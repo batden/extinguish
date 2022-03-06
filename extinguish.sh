@@ -50,6 +50,7 @@ remov_preq() {
       cd $ESRC/rlottie
       sudo ninja -C build uninstall &>/dev/null
       cd .. && rm -rf rlottie
+      ;;
     [nN])
       printf "\n$ITA%s $OFF%s\n\n" "(do not remove rlottie... OK)"
       ;;
@@ -57,6 +58,7 @@ remov_preq() {
       cd $ESRC/rlottie
       sudo ninja -C build uninstall &>/dev/null
       cd .. && rm -rf rlottie
+      ;;
     esac
   fi
 }
