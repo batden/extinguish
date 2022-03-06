@@ -1,4 +1,4 @@
-# meetse
+# extinguish
 
 **Use this script to uninstall Enlightenment 25 and related applications.**
 
