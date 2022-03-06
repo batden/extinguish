@@ -17,6 +17,7 @@ OFF="\e[0m"
 DOCDIR=$(xdg-user-dir DOCUMENTS)
 SCRFLR=$HOME/.esteem
 SNIN="sudo ninja -C build install"
+DDTL=1.2.1
 
 PROG_MN="efl terminology enlightenment ephoto evisum rage express ecrire enventor edi entice"
 
@@ -44,12 +45,17 @@ sel_menu() {
 remov_preq() {
   if [ -d $ESRC/rlottie ]; then
     echo
-    read -t 12 -p "Remove rlottie? [Y/n] " answer
+    read -t 12 -p "Remove rlottie and ddcutil? [Y/n] " answer
     case $answer in
     [yY])
       cd $ESRC/rlottie
       sudo ninja -C build uninstall &>/dev/null
       cd .. && rm -rf rlottie
+    
+      cd $ESRC/ddcutil-$DDTL
+      sudo make uninstall &>/dev/null
+      cd .. && rm -rf $ESRC/ddcutil-$DDTL
+      echo
       ;;
     [nN])
       printf "\n$ITA%s $OFF%s\n\n" "(do not remove rlottie... OK)"
@@ -58,6 +64,11 @@ remov_preq() {
       cd $ESRC/rlottie
       sudo ninja -C build uninstall &>/dev/null
       cd .. && rm -rf rlottie
+
+      cd $ESRC/ddcutil-$DDTL
+      sudo make uninstall &>/dev/null
+      cd .. && rm -rf $ESRC/ddcutil-$DDTL
+      echo
       ;;
     esac
   fi
