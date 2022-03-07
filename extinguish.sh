@@ -15,7 +15,7 @@ BDY="\e[1;33m"
 OFF="\e[0m"
 
 DOCDIR=$(xdg-user-dir DOCUMENTS)
-SCRFLR=$HOME/.esteem
+SCRFLR=$HOME/.elluminate
 SNIN="sudo ninja -C build install"
 DDTL=1.2.2
 
