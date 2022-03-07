@@ -17,12 +17,24 @@ OFF="\e[0m"
 DOCDIR=$(xdg-user-dir DOCUMENTS)
 SCRFLR=$HOME/.elluminate
 SNIN="sudo ninja -C build install"
+DISTRO=$(lsb_release -sc)
 DDTL=1.2.2
 
 PROG_MN="efl terminology enlightenment ephoto evisum rage express ecrire enventor edi entice"
 
 beep_exit() {
   paplay /usr/share/sounds/freedesktop/stereo/suspend-error.oga
+}
+
+do_test() {
+  if [ $DISTRO == jammy ]; then
+    printf "\n$BDY%s $OFF%s\n\n" "Ubuntu ${DISTRO^}... OK"
+    sleep 1
+  else
+    printf "\n$BDR%s $OFF%s\n\n" "UNSUPPORTED OPERATING SYSTEM [ $(lsb_release -d | cut -f2) ]."
+    beep_exit
+    exit 1
+  fi
 }
 
 # Hints.
@@ -541,6 +553,7 @@ main() {
   sel_menu
 
   if [ $INPUT == 1 ]; then
+    do_test
     uninstall_e25
   elif [ $INPUT == 2 ]; then
     strt_afresh
