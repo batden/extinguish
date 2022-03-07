@@ -70,7 +70,7 @@ remov_preq() {
       echo
       ;;
     [nN])
-      printf "\n$ITA%s $OFF%s\n\n" "(do not remove rlottie... OK)"
+      printf "\n$ITA%s $OFF%s\n\n" "(do not remove prerequisites... OK)"
       ;;
     *)
       cd $ESRC/rlottie
