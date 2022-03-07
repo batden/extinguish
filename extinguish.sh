@@ -17,7 +17,7 @@ OFF="\e[0m"
 DOCDIR=$(xdg-user-dir DOCUMENTS)
 SCRFLR=$HOME/.esteem
 SNIN="sudo ninja -C build install"
-DDTL=1.2.1
+DDTL=1.2.2
 
 PROG_MN="efl terminology enlightenment ephoto evisum rage express ecrire enventor edi entice"
 
@@ -51,7 +51,7 @@ remov_preq() {
       cd $ESRC/rlottie
       sudo ninja -C build uninstall &>/dev/null
       cd .. && rm -rf rlottie
-    
+
       cd $ESRC/ddcutil-$DDTL
       sudo make uninstall &>/dev/null
       cd .. && rm -rf $ESRC/ddcutil-$DDTL
