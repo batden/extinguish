@@ -360,46 +360,6 @@ uninstall_e25() {
   rm -rf .config/terminology
   rm -rf .local/bin/elluminate.sh
 
-  if [ -d $HOME/.cache/ccache ]; then
-    echo
-    read -t 12 -p "Remove the ccache folder? [y/N] " answer
-    case $answer in
-    [yY])
-      ccache -C
-      rm -rf $HOME/.cache/ccache
-      echo
-      ;;
-    [nN])
-      printf "\n$ITA%s $OFF%s\n\n" "(do not delete the ccache folder... OK)"
-      echo
-      ;;
-    *)
-      printf "\n$ITA%s $OFF%s\n\n" "(do not delete the ccache folder... OK)"
-      echo
-      ;;
-    esac
-  fi
-
-  if [ -d $HOME/.ccache ]; then
-    echo
-    read -t 12 -p "Remove the ccache folder? [y/N] " answer
-    case $answer in
-    [yY])
-      ccache -C
-      rm -rf $HOME/.ccache
-      echo
-      ;;
-    [nN])
-      printf "\n$ITA%s $OFF%s\n\n" "(do not delete the ccache folder... OK)"
-      echo
-      ;;
-    *)
-      printf "\n$ITA%s $OFF%s\n\n" "(do not delete the ccache folder... OK)"
-      echo
-      ;;
-    esac
-  fi
-
   if [ -f $HOME/.bash_aliases ]; then
     read -t 12 -p "Remove the bash_aliases file? [Y/n] " answer
     case $answer in
