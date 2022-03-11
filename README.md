@@ -1,6 +1,6 @@
 # extinguish (WIP)
 
-**Use this script to uninstall Enlightenment 25 and related applications.**
+**Use this script to uninstall Enlightenment and related applications.**
 
 Please take a look at the comments in the script (lines beginning with '#') before running it.
 
