@@ -4,7 +4,7 @@
 # Alternatively, you can use it to fix issues like Meson version mismatch errors,
 # without uninstalling everything.
 
-# EXTINGUISH.SH is written and maintained by batden@sfr.fr and carlasensa@sfr.fr,
+# EXTINGUISH is written and maintained by batden@sfr.fr and carlasensa@sfr.fr,
 # feel free to use this script as you see fit.
 # Please consider starring our repositories to show your support.
 # Cheers!
