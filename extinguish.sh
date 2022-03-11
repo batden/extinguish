@@ -86,7 +86,7 @@ remov_preq() {
   fi
 }
 
-uninstall_e25() {
+uninstall_e26() {
   if [ "$XDG_CURRENT_DESKTOP" == "Enlightenment" ]; then
     printf "$BDR%s $OFF%s\n\n" "PLEASE LOG IN TO THE DEFAULT DESKTOP ENVIRONMENT TO EXECUTE THIS SCRIPT."
     beep_exit
@@ -101,7 +101,7 @@ uninstall_e25() {
   cd $HOME
 
   for I in $PROG_MN; do
-    cd $ESRC/e25/$I
+    cd $ESRC/e26/$I
     sudo ninja -C build uninstall &>/dev/null
   done
 
@@ -401,7 +401,7 @@ uninstall_e25() {
     exit 1
   else
     cd $HOME
-    sudo rm -rf $ESRC/e25
+    sudo rm -rf $ESRC/e26
     rm -rf $DOCDIR/mbackups
     rm -rf $SCRFLR
     rm -rf .cache/ebuilds
@@ -441,7 +441,7 @@ strt_afresh() {
   cd $HOME
 
   for I in $PROG_MN; do
-    cd $ESRC/e25/$I
+    cd $ESRC/e26/$I
     rm -rf build
 
     printf "\n$BLD%s $OFF%s\n\n" "Building $I..."
@@ -486,7 +486,7 @@ get_mbkp() {
     cd $HOME
 
     for I in $PROG_MN; do
-      cd $ESRC/e25/$I
+      cd $ESRC/e26/$I
       rm -rf build
     done
   else
@@ -498,8 +498,8 @@ get_mbkp() {
   cp -aR $DOCDIR/mbackups/rlottie/build $ESRC/rlottie
 
   for I in $PROG_MN; do
-    cd $ESRC/e25/$I
-    cp -aR $DOCDIR/mbackups/$I/build $ESRC/e25/$I/
+    cd $ESRC/e26/$I
+    cp -aR $DOCDIR/mbackups/$I/build $ESRC/e26/$I/
   done
 
   printf "\n$BDY%s $OFF%s\n" "Done."
@@ -514,7 +514,7 @@ main() {
 
   if [ $INPUT == 1 ]; then
     do_test
-    uninstall_e25
+    uninstall_e26
   elif [ $INPUT == 2 ]; then
     strt_afresh
   elif [ $INPUT == 3 ]; then
