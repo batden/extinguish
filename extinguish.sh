@@ -408,7 +408,7 @@ uninstall_e26() {
     remov_preq
     sudo updatedb
     printf "\n$BDR%s $OFF%s\n" "Uninstall completed."
-    # Candidates for deletion: Search for 'extinguish', 'ebackups' and 'pbackups' in your home folder.
+    # Candidates for deletion: Search for “extinguish”, “ebackups” and “pbackups” in your home folder.
   fi
 }
 
