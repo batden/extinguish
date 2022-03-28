@@ -4,6 +4,8 @@
 # Alternatively, you can use it to fix issues like Meson version mismatch errors,
 # without uninstalling everything.
 
+# Note that EXTINGUISH is not compatible with MEETSE (previous uninstall script).
+
 # EXTINGUISH is written and maintained by batden@sfr.fr and carlasensa@sfr.fr,
 # feel free to use this script as you see fit.
 # Please consider starring our repositories to show your support.
