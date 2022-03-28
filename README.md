@@ -1,4 +1,4 @@
-# extinguish (WIP)
+# extinguish
 
 **Use this script to uninstall Enlightenment and related applications.**
 
