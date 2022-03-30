@@ -469,44 +469,6 @@ strt_afresh() {
   printf "\n$BDY%s $OFF%s\n" "Done."
 }
 
-get_mbkp() {
-  if [ "$XDG_CURRENT_DESKTOP" == "Enlightenment" ]; then
-    printf "$BDR%s $OFF%s\n\n" "PLEASE LOG IN TO THE DEFAULT DESKTOP ENVIRONMENT TO EXECUTE THIS SCRIPT."
-    beep_exit
-    exit 1
-  fi
-
-  ESRC=$(cat $HOME/.cache/ebuilds/storepath)
-
-  clear
-  printf "\n\n$BDY%s $OFF%s\n\n" "* RESTORING MESON BUILDDIRS *"
-  sleep 2
-
-  if [ -d $DOCDIR/mbackups ]; then
-    cd $ESRC/rlottie
-    rm -rf build
-    cd $HOME
-
-    for I in $PROG_MN; do
-      cd $ESRC/e26/$I
-      rm -rf build
-    done
-  else
-    printf "\n\n$BDr%s $OFF%s\n\n" "* NO BACKUP FOUND! *"
-    beep_exit
-    exit 1
-  fi
-
-  cp -aR $DOCDIR/mbackups/rlottie/build $ESRC/rlottie
-
-  for I in $PROG_MN; do
-    cd $ESRC/e26/$I
-    cp -aR $DOCDIR/mbackups/$I/build $ESRC/e26/$I/
-  done
-
-  printf "\n$BDY%s $OFF%s\n" "Done."
-}
-
 main() {
   trap '{ printf "\n$BDR%s $OFF%s\n\n" "KEYBOARD INTERRUPT."; exit 130; }' INT
 
@@ -519,8 +481,6 @@ main() {
     uninstall_e26
   elif [ $INPUT == 2 ]; then
     strt_afresh
-  elif [ $INPUT == 3 ]; then
-    get_mbkp
   else
     beep_exit
     exit 1
