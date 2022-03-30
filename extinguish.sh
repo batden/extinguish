@@ -26,17 +26,6 @@ beep_exit() {
   paplay /usr/share/sounds/freedesktop/stereo/suspend-error.oga
 }
 
-do_test() {
-  if [ $DISTRO == jammy ]; then
-    printf "\n$BDY%s $OFF%s\n\n" "Ubuntu ${DISTRO^}... OK"
-    sleep 1
-  else
-    printf "\n$BDR%s $OFF%s\n\n" "UNSUPPORTED OPERATING SYSTEM [ $(lsb_release -d | cut -f2) ]."
-    beep_exit
-    exit 1
-  fi
-}
-
 remov_preq() {
   if [ -d $ESRC/rlottie ]; then
     echo
