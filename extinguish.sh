@@ -80,6 +80,7 @@ uninstall_e26() {
 
   clear
   printf "\n\n$BDR%s $OFF%s\n\n" "* UNINSTALLING ENLIGHTENMENT DESKTOP *"
+  sleep 1
 
   cd $HOME
 
@@ -382,6 +383,5 @@ uninstall_e26() {
   # Candidates for deletion: Search for “extinguish”, “ebackups” and “pbackups” in your home folder.
 }
 
-sleep 1
 uninstall_e26
 printf "$BDR%s $OFF%s\n" "Done."
