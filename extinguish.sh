@@ -325,9 +325,12 @@ uninstall_e26() {
   sudo rm -rf enlightenment.desktop
 
   cd $HOME
+  sudo rm -rf $ESRC/e26
+  rm -rf $SCRFLR
   rm -rf .e
   rm -rf .e-log*
   rm -rf .elementary
+  rm -rf .cache/ebuilds
   rm -rf .cache/efreet
   rm -rf .cache/ephoto
   rm -rf .cache/evas_gl_common_caches
@@ -342,6 +345,8 @@ uninstall_e26() {
   rm -rf .config/rage
   rm -rf .config/terminology
   rm -rf .local/bin/elluminate.sh
+
+  remov_preq
 
   if [ -f $HOME/.bash_aliases ]; then
     read -t 12 -p "Remove the bash_aliases file? [Y/n] " answer
@@ -374,78 +379,9 @@ uninstall_e26() {
 
   sudo rm -rf /usr/lib/libintl.so
   sudo ldconfig
-
-  if [ -x /usr/local/bin/enlightenment_start ] &&
-    [ -f /usr/local/share/xsessions/enlightenment.desktop ]; then
-    printf "\n$BDR%s %s\n" "OOPS! SOMETHING WENT WRONG."
-    printf "$BDR%s $OFF%s\n" "PLEASE RELAUNCH THIS SCRIPT AND SELECT OPTION 3"
-    printf "$BDY%s $OFF%s\n\n" "RETRY OPTION 1 AFTERWARD."
-    beep_exit
-    exit 1
-  else
-    cd $HOME
-    sudo rm -rf $ESRC/e26
-    rm -rf $DOCDIR/mbackups
-    rm -rf $SCRFLR
-    rm -rf .cache/ebuilds
-    remov_preq
-    sudo updatedb
-    printf "\n$BDR%s $OFF%s\n" "Uninstall completed."
-    # Candidates for deletion: Search for “extinguish”, “ebackups” and “pbackups” in your home folder.
-  fi
+  # Candidates for deletion: Search for “extinguish”, “ebackups” and “pbackups” in your home folder.
 }
 
-strt_afresh() {
-  if [ "$XDG_CURRENT_DESKTOP" == "Enlightenment" ]; then
-    printf "$BDR%s $OFF%s\n\n" "PLEASE LOG IN TO THE DEFAULT DESKTOP ENVIRONMENT TO EXECUTE THIS SCRIPT."
-    beep_exit
-    exit 1
-  fi
-
-  ESRC=$(cat $HOME/.cache/ebuilds/storepath)
-
-  clear
-  printf "\n\n$BDY%s $OFF%s\n\n" "* FIXING MESON ERRORS *"
-  sleep 2
-
-  cd $ESRC/rlottie
-  rm -rf build
-
-  printf "\n$BLD%s $OFF%s\n\n" "Building rlottie..."
-  # Plain build.
-
-  meson -Dexample=false \
-    build
-  ninja -C build
-  $SNIN
-  sudo ldconfig
-  echo
-
-  cd $HOME
-
-  for I in $PROG_MN; do
-    cd $ESRC/e26/$I
-    rm -rf build
-
-    printf "\n$BLD%s $OFF%s\n\n" "Building $I..."
-    # Plain build.
-
-    case $I in
-    efl)
-      meson -Dbuild-examples=false -Dbuild-tests=false \
-        -Dlua-interpreter=lua -Dbindings= \
-        build
-      ninja -C build
-      ;;
-    *)
-      meson build
-      ninja -C build
-      ;;
-    esac
-
-    $SNIN
-    sudo ldconfig
-  done
-
-  printf "\n$BDY%s $OFF%s\n" "Done."
-}
+sleep 1
+uninstall_e26
+printf "$BDR%s $OFF%s\n" "Done."
