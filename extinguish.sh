@@ -1,8 +1,6 @@
 #!/bin/bash
 
 # This Bash script helps you cleanly uninstall Enlightenment and related applications.
-# Alternatively, you can use it to fix issues like Meson version mismatch errors,
-# without uninstalling everything.
 
 # Note that EXTINGUISH is not compatible with MEETSE (previous uninstall script).
 
@@ -36,23 +34,6 @@ do_test() {
     printf "\n$BDR%s $OFF%s\n\n" "UNSUPPORTED OPERATING SYSTEM [ $(lsb_release -d | cut -f2) ]."
     beep_exit
     exit 1
-  fi
-}
-
-# Hints.
-# 1: Uninstall the whole Enlightenment desktop environment.
-# 2: Delete the Meson build folders and build anew everything that needs to be rebuilt.
-# 3: Restore earlier versions of Meson builddirs.
-#
-sel_menu() {
-  if [ $INPUT -lt 1 ]; then
-    echo
-    printf "1  $BDR%s $OFF%s\n\n" "Uninstall Enlightenment now"
-    printf "2  $BDY%s $OFF%s\n\n" "Fix Meson errors and rebuild"
-    printf "3  $BDY%s $OFF%s\n\n" "Restore Meson builddirs from backup"
-
-    sleep 1 && printf "$ITA%s $OFF%s\n\n" "Or press Ctrl+C to quit."
-    read INPUT
   fi
 }
 
@@ -468,23 +449,3 @@ strt_afresh() {
 
   printf "\n$BDY%s $OFF%s\n" "Done."
 }
-
-main() {
-  trap '{ printf "\n$BDR%s $OFF%s\n\n" "KEYBOARD INTERRUPT."; exit 130; }' INT
-
-  INPUT=0
-  printf "\n$BLD%s $OFF%s\n" "Please enter the number of your choice:"
-  sel_menu
-
-  if [ $INPUT == 1 ]; then
-    do_test
-    uninstall_e26
-  elif [ $INPUT == 2 ]; then
-    strt_afresh
-  else
-    beep_exit
-    exit 1
-  fi
-}
-
-main
