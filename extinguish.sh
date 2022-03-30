@@ -14,7 +14,6 @@ BDR="\e[1;31m"
 BDY="\e[1;33m"
 OFF="\e[0m"
 
-DOCDIR=$(xdg-user-dir DOCUMENTS)
 SCRFLR=$HOME/.elluminate
 SNIN="sudo ninja -C build install"
 DISTRO=$(lsb_release -sc)
