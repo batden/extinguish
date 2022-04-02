@@ -11,12 +11,9 @@
 
 ITA="\e[3m"
 BDR="\e[1;31m"
-BDY="\e[1;33m"
 OFF="\e[0m"
 
 SCRFLR=$HOME/.elluminate
-SNIN="sudo ninja -C build install"
-DISTRO=$(lsb_release -sc)
 DDTL=1.2.2
 
 PROG_MN="efl terminology enlightenment ephoto evisum rage express ecrire enventor edi entice"
