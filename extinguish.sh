@@ -2,7 +2,7 @@
 
 # This Bash script helps you cleanly uninstall Enlightenment and related applications.
 
-# Note that EXTINGUISH is not compatible with MEETSE (previous uninstall script).
+# Note that EXTINGUISH is not compatible with MEETSE (previous uninstallation script).
 
 # EXTINGUISH is written and maintained by batden@sfr.fr and carlasensa@sfr.fr,
 # feel free to use this script as you see fit.
