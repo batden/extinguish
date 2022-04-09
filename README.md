@@ -30,7 +30,7 @@ Then issue the following command:
 ./extinguish.sh
 ```
 
-### Update local repository
+## Update local repository
 
 Change to ~/.extinguish/ and run:
 
