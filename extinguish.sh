@@ -4,8 +4,8 @@
 
 # Note that EXTINGUISH is not compatible with MEETSE (previous uninstallation script).
 
-# EXTINGUISH is written and maintained by batden@sfr.fr and carlasensa@sfr.fr,
-# feel free to use this script as you see fit.
+# EXTINGUISH is written and maintained by batden@sfr.fr, feel free to
+# use this script as you see fit.
 # Please consider starring our repositories to show your support.
 # Cheers!
 
