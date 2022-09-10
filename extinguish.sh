@@ -378,4 +378,4 @@ main() {
   printf "$BDR%s $OFF%s\n" "Done."
 }
 
-main
+main "$@"
