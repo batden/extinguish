@@ -371,11 +371,8 @@ uninstall_e26() {
   # Candidates for deletion: Search for “extinguish”, “ebackups” and “pbackups” in your home folder.
 }
 
-main() {
-  trap '{ printf "\n$BDR%s $OFF%s\n\n" "KEYBOARD INTERRUPT."; exit 130; }' INT
+trap '{ printf "\n$BDR%s $OFF%s\n\n" "KEYBOARD INTERRUPT."; exit 130; }' INT
 
-  uninstall_e26
-  printf "$BDR%s $OFF%s\n" "Done."
-}
+uninstall_e26
 
-main "$@"
+printf "$BDR%s $OFF%s\n" "Done."
