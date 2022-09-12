@@ -371,7 +371,7 @@ uninstall_e26() {
   # Candidates for deletion: Search for “extinguish”, “ebackups” and “pbackups” in your home folder.
 }
 
-fizzy() {
+lo() {
   trap '{ printf "\n$BDR%s $OFF%s\n\n" "KEYBOARD INTERRUPT."; exit 130; }' INT
 
   uninstall_e26
@@ -379,4 +379,4 @@ fizzy() {
   printf "$BDR%s $OFF%s\n" "Done."
 }
 
-fizzy "$@"
+lo
