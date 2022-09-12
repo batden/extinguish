@@ -21,7 +21,7 @@ DDTL=1.3.0
 PROG_MN="efl terminology enlightenment ephoto evisum rage express ecrire enventor edi entice"
 
 beep_exit() {
-  paplay /usr/share/sounds/freedesktop/stereo/suspend-error.oga
+  aplay --quiet /usr/share/sounds/sound-icons/pipe.wav
 }
 
 remov_preq() {
