@@ -21,7 +21,7 @@ DDTL=1.3.0
 PROG_MN="efl terminology enlightenment ephoto evisum rage express ecrire enventor edi entice"
 
 beep_exit() {
-  aplay --quiet /usr/share/sounds/sound-icons/pipe.wav
+  aplay --quiet /usr/share/sounds/sound-icons/pipe.wav 2>/dev/null
 }
 
 remov_preq() {
