@@ -67,7 +67,7 @@ uninstall_e26() {
 
   clear
   printf "\n\n$BDR%s %s\n\n" "* UNINSTALLING ENLIGHTENMENT DESKTOP *"
-  printf "$BDR%s $OFF%s\n\n" "Please wait..."
+  printf "$BDR%s $OFF%s\n\n" "This may take a while..."
 
   cd $HOME
 
