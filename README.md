@@ -4,7 +4,7 @@
 
 Please take a look at the comments in the script before running it.
 
-*See also [elluminate.sh](https://github.com/batden/elluminate)*
+*See also [elluminate.sh](https://github.com/batden/elluminate) (installation script).*
 
 ## Get started
 
