@@ -5,8 +5,8 @@
 # Caution: Always use the uninstall script matching the version of the script that
 # was used to do the installation!
 
-# EXTINGUISH is written and maintained by batden@sfr.fr, feel free to
-# use this script as you see fit.
+# EXTINGUISH is written and maintained by batden@sfr.fr and carlasensa@sfr.fr,
+# feel free to use this script as you see fit.
 
 # Please consider starring our repositories to show your support.
 # Cheers!
