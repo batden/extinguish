@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This Bash script helps you cleanly uninstall Enlightenment and related applications.
+# This Bash script helps you cleanly and safely uninstall Enlightenment and related applications.
 
 # Caution: Always use the uninstall script matching the version of the script that
 # was used to do the installation!
