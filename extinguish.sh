@@ -17,14 +17,15 @@ SCRFLR=$HOME/.elluminate
 DDTL=1.4.1
 
 PROG_MN="efl terminology enlightenment ephoto evisum rage express ecrire enventor edi entice enlightenment-module-forecasts"
+PROG_AT="eflete"
 
 beep_exit() {
   aplay --quiet /usr/share/sounds/sound-icons/pipe.wav 2>/dev/null
 }
 
 remov_preq() {
+  echo
   if [ -d $ESRC/rlottie ]; then
-    echo
     read -t 12 -p "Remove rlottie and ddcutil? [Y/n] " answer
     case $answer in
     y | Y)
@@ -73,6 +74,11 @@ uninstall_e26() {
   for I in $PROG_MN; do
     cd $ESRC/e26/$I
     sudo ninja -C build uninstall &>/dev/null
+  done
+
+  for I in $PROG_AT; do
+    cd $ESRC/e26/$I
+    sudo make uninstall &>/dev/null
   done
 
   cd /etc
@@ -255,6 +261,7 @@ uninstall_e26() {
   sudo rm -rf edje*
   sudo rm -rf eeze*
   sudo rm -rf efl*
+  sudo rm -rf eflete*
   sudo rm -rf efreet*
   sudo rm -rf elementary*
   sudo rm -rf elua*
@@ -325,6 +332,7 @@ uninstall_e26() {
   rm -rf .cache/rage
   rm -rf .config/ecrire.cfg
   rm -rf .config/edi
+  rm -rf .config/eflete
   rm -rf .config/entice
   rm -rf .config/enventor
   rm -rf .config/ephoto
@@ -358,7 +366,7 @@ uninstall_e26() {
   find /usr/local/share/locale/*/LC_MESSAGES 2>/dev/null | while read -r I; do
     echo "$I" |
       xargs sudo rm -rf \
-        $(grep -E 'efl|enlightenment|ephoto|evisum|terminology|ecrire|edi|enventor|forecasts')
+        $(grep -E 'efl|enlightenment|ephoto|evisum|terminology|ecrire|edi|enventor|eflete|forecasts')
   done
 
   sudo rm -rf /usr/lib/systemd/user/enlightenment.service
