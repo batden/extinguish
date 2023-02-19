@@ -324,7 +324,6 @@ uninstall_e26() {
   rm -rf .e
   rm -rf .e-log*
   rm -rf .elementary
-  rm -rf .cache/ebuilds
   sudo chattr -i $HOME/.cache/ebuilds/storepath && rm -rf .cache/ebuilds
   rm -rf .cache/efreet
   rm -rf .cache/ephoto
