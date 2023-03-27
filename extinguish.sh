@@ -25,6 +25,7 @@ beep_exit() {
 
 remov_preq() {
   echo
+  # Questions: Enter either y or n, or press Enter to accept the default value (capital letter).
   if [ -d $ESRC/rlottie ]; then
     read -t 12 -p "Remove rlottie and ddcutil? [Y/n] " answer
     case $answer in
