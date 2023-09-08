@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This Bash script helps you cleanly and safely uninstall Enlightenment and related applications.
+# This script helps you cleanly and safely uninstall Enlightenment and related applications.
 
 # EXTINGUISH is written and maintained by batden@sfr.fr and carlasensa@sfr.fr.
 # This work is licensed under a Creative Commons Attribution-ShareAlike 4.0
