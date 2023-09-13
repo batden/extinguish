@@ -16,8 +16,7 @@ OFF="\e[0m"
 SCRFLR=$HOME/.elluminate
 DDTL=1.4.1
 
-PROG_MN="efl terminology enlightenment ephoto evisum rage express ecrire enventor edi entice enlightenment-module-forecasts"
-PROG_AT="eflete"
+PROG_MN="efl terminology enlightenment ephoto evisum rage express ecrire enventor edi entice enlightenment-module-forecasts eflete"
 
 beep_exit() {
   aplay --quiet /usr/share/sounds/sound-icons/pipe.wav 2>/dev/null
@@ -75,11 +74,6 @@ uninstall_e26() {
   for I in $PROG_MN; do
     cd $ESRC/e26/$I
     sudo ninja -C build uninstall &>/dev/null
-  done
-
-  for I in $PROG_AT; do
-    cd $ESRC/e26/$I
-    sudo make uninstall &>/dev/null
   done
 
   cd /etc
