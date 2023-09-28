@@ -14,7 +14,7 @@ BDR="\e[1;31m"
 OFF="\e[0m"
 
 SCRFLR=$HOME/.elluminate
-DDTL=1.4.1
+DDTL=2.0.0
 
 PROG_MN="efl terminology enlightenment ephoto evisum rage express ecrire enventor edi entice enlightenment-module-forecasts eflete"
 
