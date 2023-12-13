@@ -7,7 +7,7 @@
 # See https://creativecommons.org/licenses/by-sa/4.0/
 
 # Got a GitHub account? Please consider starring our repositories to show your support.
-# Cheers!
+# Thank you!
 
 ITA="\e[3m"
 BDR="\e[1;31m"
