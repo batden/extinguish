@@ -75,6 +75,7 @@ uninstall_e26() {
   for I in $PROG_MN; do
     cd $ESRC/e26/$I
     sudo ninja -C build uninstall &>/dev/null
+    echo
   done
 
   remov_preq
