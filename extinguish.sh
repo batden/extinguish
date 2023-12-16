@@ -371,7 +371,7 @@ uninstall_e26() {
 
   sudo rm -rf /usr/lib/libintl.so
   sudo ldconfig
-  # Candidates for deletion: Search for “extinguish”, “ebackups” and “pbackups” in your home folder.
+  # Candidates for further deletion: Search for “extinguish”, “ebackups” and “pbackups” in your home folder.
 }
 
 # Calls the main function.
