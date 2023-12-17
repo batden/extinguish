@@ -14,9 +14,9 @@ First, clone this repository:
 git clone https://github.com/batden/extinguish.git .extinguish
 ```
 
-This creates a new hidden folder named **.extinguish** in your home directory.
+This creates a new hidden folder named .extinguish in your home directory.
 
-Copy the extinguish.sh file from the new .extingush folder to your download folder.
+Copy the extinguish.sh file from the new .extinguish folder to your download folder.
 
 Navigate to the download folder and make the script executable:
 
@@ -24,13 +24,13 @@ Navigate to the download folder and make the script executable:
 chmod +x extinguish.sh
 ```
 
-Then issue the following command:
+Then execute the script with:
 
 ```bash
 ./extinguish.sh
 ```
 
-## Update local repository
+## Update local repo
 
 Change to ~/.extinguish/ and run:
 
