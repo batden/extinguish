@@ -37,5 +37,3 @@ Change to ~/.extinguish/ and run:
 ```bash
 git pull
 ```
-
-That's it.
