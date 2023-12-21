@@ -35,6 +35,7 @@ beep_exit() {
   aplay --quiet /usr/share/sounds/sound-icons/pipe.wav 2>/dev/null
 }
 
+# Remove prerequisites.
 remov_preq() {
   echo
 
