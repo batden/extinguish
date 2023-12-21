@@ -37,6 +37,7 @@ beep_exit() {
 
 remov_preq() {
   echo
+
   if [ -d $ESRC/rlottie ]; then
     read -t 12 -p "Remove rlottie and ddcutil? [Y/n] " answer
     case $answer in
@@ -44,6 +45,7 @@ remov_preq() {
       cd $ESRC/rlottie
       sudo ninja -C build uninstall &>/dev/null
       cd .. && rm -rf rlottie
+      echo
 
       cd $ESRC/ddcutil-$DDTL
       sudo make uninstall &>/dev/null
