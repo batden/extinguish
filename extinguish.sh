@@ -55,10 +55,13 @@ remov_preq() {
       ;;
     *)
       cd $ESRC/rlottie
+      echo
       sudo ninja -C build uninstall &>/dev/null
       cd .. && rm -rf rlottie
+      echo
 
       cd $ESRC/ddcutil-$DDTL
+      echo
       sudo make uninstall &>/dev/null
       cd .. && rm -rf $ESRC/ddcutil-$DDTL
       echo
