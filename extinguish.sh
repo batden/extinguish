@@ -49,7 +49,7 @@ remov_preq() {
       echo
       ;;
     n | N)
-      printf "\n$ITAL%s $OFF%s\n\n" "(do not remove rlottie... OK)"
+      printf "\n$ITA%s $OFF%s\n\n" "(do not remove rlottie... OK)"
       ;;
     *)
       cd $ESRC/rlottie
@@ -95,16 +95,17 @@ uninstall_e26() {
 
   clear
   printf "\n\n$BDR%s %s\n\n" "* UNINSTALLING ENLIGHTENMENT DESKTOP ENVIRONMENT *"
+  sleep 1
   printf "$BDR%s %s\n\n" "This may take a few minutes."
   sleep 1
   printf "$BDR%s $OFF%s\n\n" "You will be prompted to answer some basic questions..."
-  sleep 1
+  sleep 2
 
   cd $HOME
 
   for I in $PROG_MN; do
     cd $ESRC/e26/$I
-    sudo ninja -C build uninstall &>/dev/null
+    sudo ninja -C build uninstall
     echo
   done
 
@@ -312,11 +313,11 @@ uninstall_e26() {
   sudo rm -rf wayland-sessions*
 
   cd /usr/local/share/applications
-  sudo sed -i '/enlightenment_filemanager/d' mimeinfo.cache &>/dev/null
-  sudo sed -i '/ecrire/d' mimeinfo.cache &>/dev/null
-  sudo sed -i '/entice/d' mimeinfo.cache &>/dev/null
-  sudo sed -i '/ephoto/d' mimeinfo.cache &>/dev/null
-  sudo sed -i '/rage/d' mimeinfo.cache &>/dev/null
+  sudo sed -i '/enlightenment_filemanager/d' mimeinfo.cache
+  sudo sed -i '/ecrire/d' mimeinfo.cache
+  sudo sed -i '/entice/d' mimeinfo.cache
+  sudo sed -i '/ephoto/d' mimeinfo.cache
+  sudo sed -i '/rage/d' mimeinfo.cache
   sudo rm -rf enlightenment_paledit.desktop
   sudo rm -rf terminology.desktop
 
@@ -341,8 +342,8 @@ uninstall_e26() {
   cd /usr/share/dbus-1/services
   sudo rm -rf org.enlightenment.Ethumb.service
 
-  cd /usr/share/wayland-sessions &>/dev/null
-  sudo rm -rf enlightenment.desktop &>/dev/null
+  cd /usr/share/wayland-sessions
+  sudo rm -rf enlightenment.desktop
 
   cd /usr/share/xsessions
   sudo rm -rf enlightenment.desktop
@@ -397,10 +398,10 @@ uninstall_e26() {
 
   sudo rm -rf /usr/lib/systemd/user/enlightenment.service
   sudo rm -rf /usr/lib/systemd/user/ethumb.service
-  sudo systemctl daemon-reload
-
   sudo rm -rf /usr/lib/libintl.so
+  sudo systemctl daemon-reload
   sudo ldconfig
+
   # Candidates for further deletion: Search for “extinguish”, “ebackups” and “pbackups” in your home folder.
 }
 
