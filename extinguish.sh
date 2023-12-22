@@ -40,32 +40,43 @@ remov_preq() {
   echo
 
   if [ -d $ESRC/rlottie ]; then
-    read -t 12 -p "Remove rlottie and ddcutil? [Y/n] " answer
+    read -t 12 -p "Remove rlottie? [Y/n] " answer
     case $answer in
     y | Y)
       cd $ESRC/rlottie
-      sudo ninja -C build uninstall &>/dev/null
+      sudo ninja -C build uninstall
       cd .. && rm -rf rlottie
-      echo
-
-      cd $ESRC/ddcutil-$DDTL
-      sudo make uninstall &>/dev/null
-      cd .. && rm -rf $ESRC/ddcutil-$DDTL
       echo
       ;;
     n | N)
-      printf "\n$ITA%s $OFF%s\n\n" "(do not remove prerequisites... OK)"
+      printf "\n$ITAL%s $OFF%s\n\n" "(do not remove rlottie... OK)"
       ;;
     *)
       cd $ESRC/rlottie
       echo
-      sudo ninja -C build uninstall &>/dev/null
+      sudo ninja -C build uninstall
       cd .. && rm -rf rlottie
       echo
+      ;;
+    esac
+  fi
 
+  if [ -d $ESRC/ddcutil-$DDTL ]; then
+    read -t 12 -p "Remove ddcutil? [Y/n] " answer
+    case $answer in
+    y | Y)
+      cd $ESRC/
+      sudo make uninstall
+      cd .. && rm -rf $ESRCDIR/ddcutil-$DDTL
+      echo
+      ;;
+    n | N)
+      printf "\n$ITA%s $OFF%s\n\n" "(do not remove ddcutil... OK)"
+      ;;
+    *)
       cd $ESRC/ddcutil-$DDTL
       echo
-      sudo make uninstall &>/dev/null
+      sudo make uninstall
       cd .. && rm -rf $ESRC/ddcutil-$DDTL
       echo
       ;;
