@@ -33,7 +33,7 @@ eflete
 efl"
 
 beep_exit() {
-  aplay --quiet /usr/share/sounds/sound-icons/pipe.wav 2>/dev/null
+  aplay --quiet /usr/share/sounds/sound-icons/pipe.wav
 }
 
 # Remove prerequisites.
@@ -255,7 +255,7 @@ final_stp() {
   sudo ldconfig
 
   # Remove the translation files too.
-  find /usr/local/share/locale/*/LC_MESSAGES 2>/dev/null | while read -r I; do
+  find /usr/local/share/locale/*/LC_MESSAGES | while read -r I; do
     echo "$I" |
       xargs sudo rm -rf \
         $(grep -E 'efl|
