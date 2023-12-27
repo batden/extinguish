@@ -120,7 +120,26 @@ del_list() {
   sudo rm -rf evas*
   sudo rm -rf rage*
   sudo rm -rf libecore*
+  sudo rm -rf libector*
+  sudo rm -rf libedje*
+  sudo rm -rf libeet*
+  sudo rm -rf libeeze*
   sudo rm -rf libefl*
+  sudo rm -rf libefreet*
+  sudo rm -rf libeina*
+  sudo rm -rf libeio*
+  sudo rm -rf libeldbus*
+  sudo rm -rf libelementary*
+  sudo rm -rf libelput*
+  sudo rm -rf libelua*
+  sudo rm -rf libembryo*
+  sudo rm -rf libemile*
+  sudo rm -rf libemotion*
+  sudo rm -rf libeo*
+  sudo rm -rf libeolian*
+  sudo rm -rf libethumb*
+  sudo rm -rf libevas*
+  sudo rm -rf libexactness*
 
   cd /usr/local/lib/x86_64-linux-gnu/cmake
   sudo rm -rf Ecore*
