@@ -71,6 +71,8 @@ remov_preq() {
       cd $ESRC/
       sudo make uninstall
       cd .. && rm -rf $ESRC/ddcutil-$DDTL
+      sudo rm -rf /usr/local/lib/cmake/ddcutil
+      sudo rm -rf /usr/local/share/ddcutil
       echo
       ;;
     n | N)
@@ -81,6 +83,8 @@ remov_preq() {
       echo
       sudo make uninstall
       cd .. && rm -rf $ESRC/ddcutil-$DDTL
+      sudo rm -rf /usr/local/lib/cmake/ddcutil
+      sudo rm -rf /usr/local/share/ddcutil
       echo
       ;;
     esac
