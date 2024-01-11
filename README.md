@@ -2,8 +2,6 @@
 
 Use this script to uninstall Enlightenment and related applications.
 
-Please take a look at the comments in the script before running it.
-
 ## Get started
 
 First, clone this repository:
