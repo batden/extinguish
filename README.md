@@ -4,8 +4,6 @@ Use this script to uninstall Enlightenment and related applications.
 
 Please take a look at the comments in the script before running it.
 
-*See also [elluminate.sh](https://github.com/batden/elluminate) (installation script).*
-
 ## Get started
 
 First, clone this repository:
