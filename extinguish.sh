@@ -2,10 +2,11 @@
 
 # This script helps you cleanly and safely uninstall Enlightenment and related applications.
 
-# Note that the binary dependencies (dev packages) are kept for system consistency. There is
-# no safe way to remove them automatically, without close supervision by the user.
+# Note that the binary dependencies (dev packages) are kept for system consistency.
+# There is no safe way to remove them automatically, without close supervision
+# by the user.
 
-# EXTINGUISH is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License,
+# EXTINGUISH.SH is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License,
 # in memory of Aaron Swartz.
 # See https://creativecommons.org/licenses/by-sa/4.0/
 
