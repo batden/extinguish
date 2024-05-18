@@ -26,10 +26,4 @@ Then execute the script with:
 ./extinguish.sh
 ```
 
-## Update local repo
-
-Change to ~/.extinguish/ and run:
-
-```bash
-git pull
-```
+That's it.
