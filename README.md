@@ -12,9 +12,7 @@ git clone https://github.com/batden/extinguish.git .extinguish
 
 This creates a new hidden folder named .extinguish in your home directory.
 
-Copy the extinguish.sh file from the new .extinguish folder to your download folder.
-
-Navigate to the download folder and make the script executable:
+Copy the extinguish.sh file from the new .extinguish folder to somewhere else and make the script executable:
 
 ```bash
 chmod +x extinguish.sh
