@@ -329,8 +329,8 @@ lo() {
 
   uninstall_e26
 
-  printf "\n\n$BLDR%s %s\n" "Done."
-  printf "$BLDR%s $OFF%s\n\n" "Candidates for further deletion: Search for “extinguish” and “ebackups” in your home folder."
+  printf "\n\n$BDR%s %s\n" "Done."
+  printf "$BDR%s $OFF%s\n\n" "Candidates for further deletion: Search for “extinguish” and “ebackups” in your home folder."
 }
 
 lo
