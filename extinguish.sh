@@ -1,4 +1,5 @@
 #!/bin/bash
+# shellcheck disable=SC1091 disable=SC2164
 
 # This script helps you cleanly and safely uninstall Enlightenment and related applications.
 
@@ -45,11 +46,11 @@ beep_exit() {
 remov_preq() {
   echo
 
-  if [ -d $ESRC/rlottie ]; then
-    read -t 12 -p "Remove rlottie? [Y/n] " answer
+  if [ -d "$ESRC"/rlottie ]; then
+    read -r -t 12 -p "Remove rlottie? [Y/n] " answer
     case $answer in
     y | Y)
-      cd $ESRC/rlottie
+      cd "$ESRC"/rlottie
       sudo ninja -C build uninstall
       cd .. && rm -rf rlottie
       sudo rm -rf /usr/local/lib/x86_64-linux-gnu/pkgconfig/rlottie.pc
@@ -59,7 +60,7 @@ remov_preq() {
       printf "\n$ITA%s $OFF%s\n\n" "(do not remove rlottie... OK)"
       ;;
     *)
-      cd $ESRC/rlottie
+      cd "$ESRC"/rlottie
       echo
       sudo ninja -C build uninstall
       cd .. && rm -rf rlottie
@@ -69,14 +70,14 @@ remov_preq() {
     esac
   fi
 
-  if [ -d $ESRC/ddcutil-$DDTL ]; then
-    read -t 12 -p "Remove ddcutil? [Y/n] " answer
+  if [ -d "$ESRC"/ddcutil-$DDTL ]; then
+    read -r -t 12 -p "Remove ddcutil? [Y/n] " answer
     case $answer in
     y | Y)
-      cd $ESRC/ddcutil-$DDTL
+      cd "$ESRC"/ddcutil-$DDTL
       sudo make uninstall
-      cd .. && rm -rf $ESRC/ddcutil-$DDTL
-      rm -rf $HOME/.cache/ddcutil
+      cd .. && rm -rf "$ESRC"/ddcutil-$DDTL
+      rm -rf "$HOME"/.cache/ddcutil
       sudo rm -rf /usr/local/lib/cmake/ddcutil
       sudo rm -rf /usr/local/share/ddcutil
       echo
@@ -85,11 +86,11 @@ remov_preq() {
       printf "\n$ITA%s $OFF%s\n\n" "(do not remove ddcutil... OK)"
       ;;
     *)
-      cd $ESRC/ddcutil-$DDTL
+      cd "$ESRC"/ddcutil-$DDTL
       echo
       sudo make uninstall
-      cd .. && rm -rf $ESRC/ddcutil-$DDTL
-      rm -rf $HOME/.cache/ddcutil
+      cd .. && rm -rf "$ESRC"/ddcutil-$DDTL
+      rm -rf "$HOME"/.cache/ddcutil
       sudo rm -rf /usr/local/lib/cmake/ddcutil
       sudo rm -rf /usr/local/share/ddcutil
       echo
@@ -231,13 +232,13 @@ del_list() {
   cd /usr/share/xsessions
   sudo rm -rf enlightenment.desktop
 
-  cd $HOME
-  sudo rm -rf $ESRC/e26
-  rm -rf $SCRFLR
+  cd "$HOME"
+  sudo rm -rf "$ESRC"/e26
+  rm -rf "$SCRFLR"
   rm -rf .e
   rm -rf .e-log*
   rm -rf .elementary
-  sudo chattr -i $HOME/.cache/ebuilds/storepath && rm -rf .cache/ebuilds
+  sudo chattr -i "$HOME"/.cache/ebuilds/storepath && rm -rf .cache/ebuilds
   rm -rf .cache/efreet
   rm -rf .cache/ephoto
   rm -rf .cache/evas_gl_common_caches
@@ -256,11 +257,11 @@ del_list() {
 }
 
 final_stp() {
-  if [ -f $HOME/.bash_aliases ]; then
-    read -t 12 -p "Remove the .bash_aliases file? [Y/n] " answer
+  if [ -f "$HOME"/.bash_aliases ]; then
+    read -r -t 12 -p "Remove the .bash_aliases file? [Y/n] " answer
     case $answer in
     y | Y)
-      rm -rf $HOME/.bash_aliases && source $HOME/.bashrc
+      rm -rf "$HOME"/.bash_aliases && source "$HOME"/.bashrc
       sleep 1
       ;;
     n | N)
@@ -269,7 +270,7 @@ final_stp() {
       ;;
     *)
       echo
-      rm -rf $HOME/.bash_aliases && source $HOME/.bashrc
+      rm -rf "$HOME"/.bash_aliases && source "$HOME"/.bashrc
       sleep 1
       ;;
     esac
@@ -285,7 +286,7 @@ final_stp() {
   find /usr/local/share/locale/*/LC_MESSAGES | while read -r I; do
     echo "$I" |
       xargs sudo rm -rf \
-        $(grep -E 'efl|enlightenment|ephoto|evisum|terminology|ecrire|edi|enventor|eflete|forecasts|penguins|places')
+        "$(grep -E 'efl|enlightenment|ephoto|evisum|terminology|ecrire|edi|enventor|eflete|forecasts|penguins|places')"
   done
 }
 
@@ -302,7 +303,7 @@ uninstall_e26() {
     fi
   fi
 
-  ESRC=$(cat $HOME/.cache/ebuilds/storepath)
+  ESRC=$(cat "$HOME"/.cache/ebuilds/storepath)
 
   clear
   printf "\n\n$BDR%s %s\n\n" "* UNINSTALLING ENLIGHTENMENT DESKTOP ENVIRONMENT *"
@@ -310,10 +311,10 @@ uninstall_e26() {
   printf "$BDR%s $OFF%s\n\n" "You will be prompted to answer some basic questions..."
   sleep 2
 
-  cd $HOME
+  cd "$HOME"
 
   for I in $PROG_MN; do
-    cd $ESRC/e26/$I
+    cd "$ESRC"/e26/"$I"
     sudo ninja -C build uninstall
     echo
   done
