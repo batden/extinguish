@@ -15,8 +15,8 @@
 # If you find this script useful, please consider starring our repositories to show your support.
 # Thank you!
 
-ITA="\e[3m"
-BDR="\e[1;31m"
+RED_BRIGHT="\e[1;38;5;1m"
+ITALIC="\e[3m"
 OFF="\e[0m"
 
 SCRFLR=$HOME/.elluminate
@@ -58,7 +58,7 @@ remov_preq() {
       echo
       ;;
     n | N)
-      printf "\n$ITA%s $OFF%s\n\n" "(do not remove rlottie... OK)"
+      printf "\n$ITALIC%s $OFF%s\n\n" "(do not remove rlottie... OK)"
       ;;
     *)
       cd "$ESRC"/rlottie
@@ -84,7 +84,7 @@ remov_preq() {
       echo
       ;;
     n | N)
-      printf "\n$ITA%s $OFF%s\n\n" "(do not remove ddcutil... OK)"
+      printf "\n$ITALIC%s $OFF%s\n\n" "(do not remove ddcutil... OK)"
       ;;
     *)
       cd "$ESRC"/ddcutil-$DDTL
@@ -266,7 +266,7 @@ final_stp() {
       sleep 1
       ;;
     n | N)
-      printf "\n$ITA%s $OFF%s\n\n" "(do not delete .bash_aliases... OK)"
+      printf "\n$ITALIC%s $OFF%s\n\n" "(do not delete .bash_aliases... OK)"
       sleep 1
       ;;
     *)
@@ -293,7 +293,7 @@ final_stp() {
 
 uninstall_e26() {
   if [ "$XDG_CURRENT_DESKTOP" == "Enlightenment" ]; then
-    printf "$BDR%s $OFF%s\n\n" "PLEASE LOG IN TO THE DEFAULT DESKTOP ENVIRONMENT TO EXECUTE THIS SCRIPT."
+    printf "$RED_BRIGHT%s $OFF%s\n\n" "PLEASE LOG IN TO THE DEFAULT DESKTOP ENVIRONMENT TO EXECUTE THIS SCRIPT."
     beep_exit
     exit 1
   fi
@@ -307,9 +307,9 @@ uninstall_e26() {
   ESRC=$(cat "$HOME"/.cache/ebuilds/storepath)
 
   clear
-  printf "\n\n$BDR%s %s\n\n" "* UNINSTALLING ENLIGHTENMENT DESKTOP ENVIRONMENT *"
+  printf "\n\n$RED_BRIGHT%s %s\n\n" "* UNINSTALLING ENLIGHTENMENT DESKTOP ENVIRONMENT *"
   sleep 1
-  printf "$BDR%s $OFF%s\n\n" "You will be prompted to answer some basic questions..."
+  printf "$RED_BRIGHT%s $OFF%s\n\n" "You will be prompted to answer some basic questions..."
   sleep 2
 
   cd "$HOME"
@@ -327,12 +327,12 @@ uninstall_e26() {
 
 # Call the main function.
 lo() {
-  trap '{ printf "\n$BDR%s $OFF%s\n\n" "KEYBOARD INTERRUPT."; exit 130; }' INT
+  trap '{ printf "\n$RED_BRIGHT%s $OFF%s\n\n" "KEYBOARD INTERRUPT."; exit 130; }' INT
 
   uninstall_e26
 
-  printf "\n\n$BDR%s %s\n" "Done."
-  printf "$BDR%s $OFF%s\n\n" 'Candidates for further deletion: Search for "extinguish" and "ebackups" in your home folder.'
+  printf "\n\n$RED_BRIGHT%s %s\n" "Done."
+  printf "$RED_BRIGHT%s $OFF%s\n\n" 'Candidates for further deletion: Search for "extinguish" and "ebackups" in your home folder.'
 }
 
 lo
