@@ -285,10 +285,10 @@ final_stp() {
 
   # Remove the translation files too.
   find /usr/local/share/locale/*/LC_MESSAGES | while read -r I; do
-    echo "$I" | xargs sudo rm -rf |
-      grep -E '^(efl|enlightenment|ephoto|evisum|terminology|
-         ecrire|edi|enventor|eflete|forecasts|
-         e-module-penguins|e-module-places)'
+    echo "$I" |
+      xargs sudo rm -rf \
+        "$(grep -E 'efl|enlightenment|ephoto|evisum|terminology|ecrire|edi|enventor|eflete|forecasts|
+        e-module-penguins|forecasts|e-module-penguins|e-module-places')"
   done
 }
 
