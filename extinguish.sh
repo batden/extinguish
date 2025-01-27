@@ -288,7 +288,7 @@ final_stp() {
     echo "$I" |
       xargs sudo rm -rf \
         "$(grep -E 'efl|enlightenment|ephoto|evisum|terminology|ecrire|edi|enventor|eflete|forecasts|
-        |e-module-penguins|e-module-places')"
+        e-module-penguins|e-module-places')"
   done
 }
 
