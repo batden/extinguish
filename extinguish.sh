@@ -11,8 +11,8 @@
 # in memory of Aaron Swartz.
 # See https://creativecommons.org/licenses/by/4.0/
 
-# Got a GitHub account?
-# If you find this script useful, please consider starring our repositories to show your support.
+# If you find this script useful, please consider starring our repositories or
+# donating with PayPal (see README.md) to show your support.
 # Thank you!
 
 RED_BRIGHT="\e[1;38;5;1m"
@@ -20,7 +20,7 @@ ITALIC="\e[3m"
 OFF="\e[0m"
 
 SCRFLR=$HOME/.elluminate
-DDTL=2.0.0
+DDTL=2.1.4
 
 PROG_MN="
 terminology
