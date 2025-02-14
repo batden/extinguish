@@ -210,6 +210,8 @@ del_list() {
   sudo sed -i '/ephoto/d' mimeinfo.cache
   sudo sed -i '/rage/d' mimeinfo.cache
   sudo rm -rf enlightenment_paledit.desktop
+  sudo rm -rf evisum_cpu.desktop
+  sudo rm -rf evisum_mem.desktop
   sudo rm -rf terminology.desktop
 
   cd /usr/local/share/doc
