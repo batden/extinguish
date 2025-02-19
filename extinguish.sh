@@ -20,7 +20,7 @@ ITALIC="\e[3m"
 OFF="\e[0m"
 
 SCRFLR=$HOME/.elluminate
-DDTL=2.1.4
+DDTL=2.2.0
 
 PROG_MN="
 terminology
