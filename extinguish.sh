@@ -37,7 +37,8 @@ prog_mn=(
   enlightenment-module-penguins
   enlightenment-module-places
   eflete
-  efl)
+  efl
+)
 
 beep_exit() {
   aplay --quiet /usr/share/sounds/sound-icons/pipe.wav
