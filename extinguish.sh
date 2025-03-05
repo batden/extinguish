@@ -22,22 +22,22 @@ off="\e[0m"
 scrflr=$HOME/.elluminate
 ddtl=2.2.0
 
-prog_mn="
-terminology
-enlightenment
-ephoto
-rage
-evisum
-express
-ecrire
-enventor
-edi
-entice
-enlightenment-module-forecasts
-enlightenment-module-penguins
-enlightenment-module-places
-eflete
-efl"
+prog_mn=(
+  terminology
+  enlightenment
+  ephoto
+  rage
+  evisum
+  express
+  ecrire
+  enventor
+  edi
+  entice
+  enlightenment-module-forecasts
+  enlightenment-module-penguins
+  enlightenment-module-places
+  eflete
+  efl)
 
 beep_exit() {
   aplay --quiet /usr/share/sounds/sound-icons/pipe.wav
@@ -317,7 +317,7 @@ uninstall_e26() {
 
   cd "$HOME"
 
-  for I in $prog_mn; do
+  for I in "${prog_mn[@]}"; do
     cd "$esrc"/e26/"$I"
     sudo ninja -C build uninstall
     echo
