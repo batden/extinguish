@@ -331,7 +331,7 @@ uninstall_e26() {
 
 # Call the main function.
 lo() {
-  trap '{ printf "\n$red_bright%s $off%s\n\n" "KEYBOARD INTERRUPT."; exit 130; }' INT
+  trap '{ printf "\n$red_bright%s $off%s\n\n" "KEYBOARD INTERRUPT."; exit 130; }' SIGINT
 
   uninstall_e26
 
