@@ -20,7 +20,7 @@ italic="\e[3m"
 off="\e[0m"
 
 scrflr=$HOME/.elluminate
-ddtl=2.2.0
+ddctl=2.2.0
 
 prog_mn=(
   terminology
@@ -72,13 +72,13 @@ remov_preq() {
     esac
   fi
 
-  if [ -d "$esrc"/ddcutil-$ddtl ]; then
+  if [ -d "$esrc"/ddcutil-$ddctl ]; then
     read -r -t 12 -p "Remove ddcutil? [Y/n] " answer
     case $answer in
     y | Y)
-      cd "$esrc"/ddcutil-$ddtl
+      cd "$esrc"/ddcutil-$ddctl
       sudo make uninstall
-      cd .. && rm -rf "$esrc"/ddcutil-$ddtl
+      cd .. && rm -rf "$esrc"/ddcutil-$ddctl
       rm -rf "$HOME"/.cache/ddcutil
       sudo rm -rf /usr/local/lib/cmake/ddcutil
       sudo rm -rf /usr/local/share/ddcutil
@@ -88,10 +88,10 @@ remov_preq() {
       printf "\n$italic%s $off%s\n\n" "(do not remove ddcutil... OK)"
       ;;
     *)
-      cd "$esrc"/ddcutil-$ddtl
+      cd "$esrc"/ddcutil-$ddctl
       echo
       sudo make uninstall
-      cd .. && rm -rf "$esrc"/ddcutil-$ddtl
+      cd .. && rm -rf "$esrc"/ddcutil-$ddctl
       rm -rf "$HOME"/.cache/ddcutil
       sudo rm -rf /usr/local/lib/cmake/ddcutil
       sudo rm -rf /usr/local/share/ddcutil
