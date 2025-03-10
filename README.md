@@ -18,7 +18,7 @@ Copy the extinguish.sh file from the new .extinguish folder to somewhere else an
 chmod +x extinguish.sh
 ```
 
-Then execute the script with:
+Then, execute the script with:
 
 ```bash
 ./extinguish.sh
