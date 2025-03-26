@@ -44,7 +44,7 @@ beep_exit() {
   aplay --quiet /usr/share/sounds/sound-icons/pipe.wav
 }
 
-# Remove prerequisites.
+# Removes prerequisites.
 remov_preq() {
   echo
 
@@ -101,7 +101,7 @@ remov_preq() {
   fi
 }
 
-# Clean any leftover files after uninstalling Enlightenment and related applications.
+# Cleans up any leftover files after uninstalling Enlightenment and related applications.
 del_list() {
   cd /etc
   sudo rm -rf enlightenment
@@ -286,7 +286,7 @@ final_stp() {
   sudo systemctl daemon-reload
   sudo ldconfig
 
-  # Remove the translation files too.
+  # Also removes the translation files.
   find /usr/local/share/locale/*/LC_MESSAGES | while read -r I; do
     echo "$I" |
       xargs sudo rm -rf \
@@ -329,7 +329,6 @@ uninstall_e26() {
   final_stp
 }
 
-# Call the main function.
 lo() {
   trap '{ printf "\n$red_bright%s $off%s\n\n" "KEYBOARD INTERRUPT."; exit 130; }' SIGINT
 
