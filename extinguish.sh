@@ -112,9 +112,6 @@ del_list() {
   cd /usr/local/bin
   sudo rm -rf efl*
 
-  cd /usr/local/etc
-  sudo rm -rf enlightenment
-
   cd /usr/local/include
   sudo rm -rf -- *-1
   sudo rm -rf enlightenment
