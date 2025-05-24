@@ -22,6 +22,7 @@ off="\e[0m"
 scrflr=$HOME/.elluminate
 ddctl=2.2.0
 
+# Enlightenment programs to be removed.
 prog_mn=(
   terminology
   enlightenment
@@ -44,7 +45,7 @@ beep_exit() {
   aplay --quiet /usr/share/sounds/sound-icons/pipe.wav
 }
 
-# Removes prerequisites.
+# Remove prerequisites.
 remov_preq() {
   echo
 
@@ -101,7 +102,7 @@ remov_preq() {
   fi
 }
 
-# Cleans up any leftover files after uninstalling Enlightenment and related applications.
+# Clean up any leftover files after uninstalling Enlightenment and its related applications.
 del_list() {
   cd /etc
   sudo rm -rf enlightenment
@@ -287,7 +288,7 @@ final_stp() {
   sudo systemctl daemon-reload
   sudo ldconfig
 
-  # Also removes the translation files.
+  # Also remove the translation files.
   find /usr/local/share/locale/*/LC_MESSAGES | while read -r I; do
     echo "$I" |
       xargs sudo rm -rf \
