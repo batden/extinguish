@@ -262,6 +262,7 @@ del_list() {
   rm -rf .local/bin/elluminate.sh
 }
 
+# Perform the final cleanup steps for uninstalling the Enlightenment ecosystem.
 final_stp() {
   if [ -f "$HOME"/.bash_aliases ]; then
     read -r -t 12 -p "Remove the .bash_aliases file? [Y/n] " answer
