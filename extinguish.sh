@@ -57,20 +57,18 @@ remov_preq() {
       sudo ninja -C build uninstall
       cd .. && rm -rf rlottie
       sudo rm -rf /usr/local/lib/x86_64-linux-gnu/pkgconfig/rlottie.pc
-      echo
       ;;
     n | N)
       printf "\n$italic%s $off%s\n\n" "(do not remove rlottie... OK)"
       ;;
     *)
       cd "$esrc"/rlottie
-      echo
       sudo ninja -C build uninstall
       cd .. && rm -rf rlottie
       sudo rm -rf /usr/local/lib/x86_64-linux-gnu/pkgconfig/rlottie.pc
-      echo
       ;;
     esac
+    echo
   fi
 
   if [ -d "$esrc"/ddcutil-$ddctl ]; then
@@ -83,22 +81,20 @@ remov_preq() {
       rm -rf "$HOME"/.cache/ddcutil
       sudo rm -rf /usr/local/lib/cmake/ddcutil
       sudo rm -rf /usr/local/share/ddcutil
-      echo
       ;;
     n | N)
       printf "\n$italic%s $off%s\n\n" "(do not remove ddcutil... OK)"
       ;;
     *)
       cd "$esrc"/ddcutil-$ddctl
-      echo
       sudo make uninstall
       cd .. && rm -rf "$esrc"/ddcutil-$ddctl
       rm -rf "$HOME"/.cache/ddcutil
       sudo rm -rf /usr/local/lib/cmake/ddcutil
       sudo rm -rf /usr/local/share/ddcutil
-      echo
       ;;
     esac
+    echo
   fi
 }
 
@@ -276,11 +272,11 @@ final_stp() {
       sleep 1
       ;;
     *)
-      echo
       rm -rf "$HOME"/.bash_aliases && source "$HOME"/.bashrc
       sleep 1
       ;;
     esac
+    echo
   fi
 
   sudo rm -rf /usr/lib/systemd/user/enlightenment.service
