@@ -17,7 +17,7 @@ red_bright="\e[1;38;5;1m"
 italic="\e[3m"
 off="\e[0m"
 
-# --- Script variables ---
+# --- Paths ---
 scrflr=$HOME/.elluminate
 ddctl=2.2.0
 
