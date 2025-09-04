@@ -2,27 +2,26 @@
 # shellcheck disable=SC1091 disable=SC2164
 
 # This script will help you uninstall Enlightenment and related applications cleanly and safely.
-
 # Note that the binary dependencies (dev packages) are preserved for system consistency.
-# There is no safe way to remove them automatically, without close supervision
-# by the user.
+# There is no safe way to remove them automatically, without close supervision by the user.
 
 # EXTINGUISH.SH is licensed under a Creative Commons Attribution 4.0 International License,
 # in memory of Aaron Swartz.
 # See https://creativecommons.org/licenses/by/4.0/
 
 # If you find our scripts useful, please consider starring our repositories or
-# donating with PayPal (see README.md) to show your support.
-# Thank you!
+# donating with PayPal (see README.md) to show your support. Thank you!
 
+# --- Color and formatting variables ---
 red_bright="\e[1;38;5;1m"
 italic="\e[3m"
 off="\e[0m"
 
+# --- Script variables ---
 scrflr=$HOME/.elluminate
 ddctl=2.2.0
 
-# Enlightenment programs to be removed.
+# --- Enlightenment programs to be removed ---
 prog_mn=(
   terminology
   enlightenment
@@ -41,11 +40,12 @@ prog_mn=(
   efl
 )
 
+# --- Play exit sound ---
 beep_exit() {
   aplay --quiet /usr/share/sounds/sound-icons/pipe.wav
 }
 
-# Remove prerequisites.
+# --- Remove prerequisites ---
 remov_preq() {
   echo
 
@@ -98,8 +98,9 @@ remov_preq() {
   fi
 }
 
-# Clean up any leftover files after uninstalling Enlightenment and its related applications.
+# --- Clean up leftover files after uninstall ---
 del_list() {
+  # Remove system-wide files and directories.
   cd /etc
   sudo rm -rf enlightenment
 
@@ -234,6 +235,7 @@ del_list() {
   sudo rm -rf enlightenment.desktop
 
   cd "$HOME"
+  # Remove user files and directories.
   sudo rm -rf "$esrc"/e26
   rm -rf "$scrflr"
   rm -rf .e
@@ -258,7 +260,7 @@ del_list() {
   rm -rf .local/bin/elluminate.sh
 }
 
-# Perform the final cleanup steps for uninstalling the Enlightenment ecosystem.
+# --- Final cleanup steps ---
 final_stp() {
   if [ -f "$HOME"/.bash_aliases ]; then
     read -r -t 12 -p "Remove the .bash_aliases file? [Y/n] " answer
@@ -285,7 +287,7 @@ final_stp() {
   sudo systemctl daemon-reload
   sudo ldconfig
 
-  # Also remove the translation files.
+  # Remove translation files.
   find /usr/local/share/locale/*/LC_MESSAGES | while read -r I; do
     echo "$I" |
       xargs sudo rm -rf \
@@ -294,6 +296,7 @@ final_stp() {
   done
 }
 
+# --- Uninstall Enlightenment ecosystem ---
 uninstall_e26() {
   if [ "$XDG_CURRENT_DESKTOP" == "Enlightenment" ]; then
     printf "$red_bright%s $off%s\n\n" "PLEASE LOG IN TO THE DEFAULT DESKTOP ENVIRONMENT TO EXECUTE THIS SCRIPT."
@@ -328,6 +331,7 @@ uninstall_e26() {
   final_stp
 }
 
+# --- Main entry point ---
 lo() {
   trap '{ printf "\n$red_bright%s $off%s\n\n" "KEYBOARD INTERRUPT."; exit 130; }' SIGINT
 
