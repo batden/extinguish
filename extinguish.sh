@@ -49,11 +49,11 @@ beep_exit() {
 remov_preq() {
   echo
 
-  if [ -d "$esrc"/rlottie ]; then
+  if [ -d "$esrc/rlottie" ]; then
     read -r -t 12 -p "Remove rlottie? [Y/n] " answer
     case $answer in
     y | Y)
-      cd "$esrc"/rlottie
+      cd "$esrc/rlottie"
       sudo ninja -C build uninstall
       cd .. && rm -rf rlottie
       sudo rm -rf /usr/local/lib/x86_64-linux-gnu/pkgconfig/rlottie.pc
@@ -62,7 +62,7 @@ remov_preq() {
       printf "\n$italic%s $off%s\n\n" "(do not remove rlottie... OK)"
       ;;
     *)
-      cd "$esrc"/rlottie
+      cd "$esrc/rlottie"
       sudo ninja -C build uninstall
       cd .. && rm -rf rlottie
       sudo rm -rf /usr/local/lib/x86_64-linux-gnu/pkgconfig/rlottie.pc
@@ -71,14 +71,14 @@ remov_preq() {
     echo
   fi
 
-  if [ -d "$esrc"/ddcutil-$ddctl ]; then
+  if [ -d "$esrc/ddcutil-$ddctl" ]; then
     read -r -t 12 -p "Remove ddcutil? [Y/n] " answer
     case $answer in
     y | Y)
-      cd "$esrc"/ddcutil-$ddctl
+      cd "$esrc/ddcutil-$ddctl"
       sudo make uninstall
-      cd .. && rm -rf "$esrc"/ddcutil-$ddctl
-      rm -rf "$HOME"/.cache/ddcutil
+      cd .. && rm -rf "$esrc/ddcutil-$ddctl"
+      rm -rf "$HOME/.cache/ddcutil"
       sudo rm -rf /usr/local/lib/cmake/ddcutil
       sudo rm -rf /usr/local/share/ddcutil
       ;;
@@ -86,10 +86,10 @@ remov_preq() {
       printf "\n$italic%s $off%s\n\n" "(do not remove ddcutil... OK)"
       ;;
     *)
-      cd "$esrc"/ddcutil-$ddctl
+      cd "$esrc/ddcutil-$ddctl"
       sudo make uninstall
-      cd .. && rm -rf "$esrc"/ddcutil-$ddctl
-      rm -rf "$HOME"/.cache/ddcutil
+      cd .. && rm -rf "$esrc/ddcutil-$ddctl"
+      rm -rf "$HOME/.cache/ddcutil"
       sudo rm -rf /usr/local/lib/cmake/ddcutil
       sudo rm -rf /usr/local/share/ddcutil
       ;;
@@ -262,11 +262,11 @@ del_list() {
 
 # --- Final cleanup steps ---
 final_stp() {
-  if [ -f "$HOME"/.bash_aliases ]; then
+  if [ -f "$HOME/.bash_aliases" ]; then
     read -r -t 12 -p "Remove the .bash_aliases file? [Y/n] " answer
     case $answer in
     y | Y)
-      rm -rf "$HOME"/.bash_aliases && source "$HOME"/.bashrc
+      rm -rf "$HOME/.bash_aliases" && source "$HOME/.bashrc"
       sleep 1
       ;;
     n | N)
