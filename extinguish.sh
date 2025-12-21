@@ -9,8 +9,8 @@
 # in memory of Aaron Swartz.
 # See https://creativecommons.org/licenses/by/4.0/
 
-# If you find our scripts useful, please consider starring our repositories or
-# donating with PayPal (see README.md) to show your support. Thank you!
+# If you find our scripts useful, please consider starring our repositories to show your support.
+# Thank you!
 
 # --- Color and formatting variables ---
 red_bright="\e[1;38;5;1m"
