@@ -19,7 +19,7 @@ off="\e[0m"
 
 # --- Paths ---
 scrflr=$HOME/.elluminate
-ddctl=2.2.4
+ddctl=2.2.
 
 # --- Enlightenment programs to be removed ---
 prog_mn=(
