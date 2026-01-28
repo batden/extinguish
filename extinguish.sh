@@ -71,24 +71,27 @@ remov_preq() {
     echo
   fi
 
-  if [ -d "$esrc/ddcutil-$ddctl" ]; then
-    read -r -t 12 -p "Remove ddcutil? [Y/n] " answer
+ddctl_ver=("$ddctl" "2.2.3" "2.2.4")
+
+for i in "${ddctl_ver[@]}"; do
+  if [ -d "$esrc/ddcutil-$i" ]; then
+    read -r -t 12 -p "Remove ddcutil-$i? [Y/n] " answer
     case $answer in
     y | Y)
-      cd "$esrc/ddcutil-$ddctl"
+      cd "$esrc/ddcutil-$i"
       sudo make uninstall
-      cd .. && rm -rf "$esrc/ddcutil-$ddctl"
+      cd .. && rm -rf "$esrc/ddcutil-$i"
       rm -rf "$HOME/.cache/ddcutil"
       sudo rm -rf /usr/local/lib/cmake/ddcutil
       sudo rm -rf /usr/local/share/ddcutil
       ;;
     n | N)
-      printf "\n$italic%s $off%s\n\n" "(do not remove ddcutil... OK)"
+      printf "\n$italic%s $off%s\n\n" "(do not remove ddcutil-$i... OK)"
       ;;
     *)
-      cd "$esrc/ddcutil-$ddctl"
+      cd "$esrc/ddcutil-$i"
       sudo make uninstall
-      cd .. && rm -rf "$esrc/ddcutil-$ddctl"
+      cd .. && rm -rf "$esrc/ddcutil-$i"
       rm -rf "$HOME/.cache/ddcutil"
       sudo rm -rf /usr/local/lib/cmake/ddcutil
       sudo rm -rf /usr/local/share/ddcutil
@@ -96,6 +99,7 @@ remov_preq() {
     esac
     echo
   fi
+done
 }
 
 # --- Clean up leftover files after uninstall ---
@@ -320,8 +324,8 @@ uninstall_e26() {
 
   cd "$HOME"
 
-  for I in "${prog_mn[@]}"; do
-    cd "$esrc"/e26/"$I"
+  for i in "${prog_mn[@]}"; do
+    cd "$esrc"/e26/"$i"
     sudo ninja -C build uninstall
     echo
   done
