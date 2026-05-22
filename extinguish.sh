@@ -113,12 +113,15 @@ del_list() {
 
   cd /usr/local/bin
   sudo rm -rf efl*
+  sudo rm -rf elua*
+  sudo rm -rf entice*
 
   cd /usr/local/etc
   sudo rm -rf enlightenment
 
   cd /usr/local/include
   sudo rm -rf -- *-1
+  sudo rm -rf enigmatic
   sudo rm -rf enlightenment
   sudo rm -rf express-0
 
@@ -136,6 +139,7 @@ del_list() {
   sudo rm -rf rage*
   sudo rm -rf libecore*
   sudo rm -rf libector*
+  sudo rm -rf libedi*
   sudo rm -rf libedje*
   sudo rm -rf libeet*
   sudo rm -rf libeeze*
@@ -150,6 +154,7 @@ del_list() {
   sudo rm -rf libembryo*
   sudo rm -rf libemile*
   sudo rm -rf libemotion*
+  sudo rm -rf libenigmatic*
   sudo rm -rf libeo*
   sudo rm -rf libeolian*
   sudo rm -rf libethumb*
