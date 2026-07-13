@@ -297,12 +297,16 @@ final_stp() {
   sudo ldconfig
 
   # Remove translation files.
-  find /usr/local/share/locale/*/LC_MESSAGES | while read -r I; do
-    echo "$I" |
-      xargs sudo rm -rf \
-        "$(grep -E 'efl|enlightenment|ephoto|evisum|terminology|ecrire|edi|enventor|eflete|forecasts|
-        e-module-penguins|e-module-places')"
-  done
+  if [ -d /usr/local/share/locale ]; then
+    find /usr/local/share/locale -name "LC_MESSAGES" -type d 2>/dev/null |
+      while read -r i; do
+        find "$i" -name "*.mo" |
+          grep -E 'efl|enlightenment|ephoto|evisum|terminology|ecrire|edi|enventor|eflete|forecasts|e-module-penguins|e-module-places' |
+          while read -r mo_file; do
+            sudo rm -f "$mo_file"
+          done
+      done
+  fi
 }
 
 # --- Uninstall Enlightenment ecosystem ---
