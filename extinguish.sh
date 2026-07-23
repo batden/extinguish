@@ -252,6 +252,7 @@ del_list() {
   rm -rf .elementary
   sudo chattr -i "$HOME"/.cache/ebuilds/storepath && rm -rf .cache/ebuilds
   rm -rf .cache/efreet
+  rm -rf .cache/enigmatic
   rm -rf .cache/entice
   rm -rf .cache/ephoto
   rm -rf .cache/evas_gl_common_caches
@@ -259,6 +260,7 @@ del_list() {
   rm -rf .config/ecrire.cfg
   rm -rf .config/edi
   rm -rf .config/eflete
+  rm -rf .config/enigmatic
   rm -rf .config/entice
   rm -rf .config/enventor
   rm -rf .config/ephoto
