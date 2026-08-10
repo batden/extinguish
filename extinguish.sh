@@ -245,7 +245,7 @@ del_list() {
 
   cd "$HOME"
   # Remove user files and directories.
-  sudo rm -rf "$esrc"/e26
+  sudo rm -rf "$esrc"/enlighten
   rm -rf "$scrflr"
   rm -rf .e
   rm -rf .e-log*
@@ -312,7 +312,7 @@ final_stp() {
 }
 
 # --- Uninstall Enlightenment ecosystem ---
-uninstall_e26() {
+uninstall_enlighten() {
   if [ "$XDG_CURRENT_DESKTOP" == "Enlightenment" ]; then
     printf "$red_bright%s $off%s\n\n" "PLEASE LOG IN TO THE DEFAULT DESKTOP ENVIRONMENT TO EXECUTE THIS SCRIPT."
     beep_exit
@@ -336,7 +336,7 @@ uninstall_e26() {
   cd "$HOME"
 
   for i in "${prog_mn[@]}"; do
-    cd "$esrc"/e26/"$i"
+    cd "$esrc"/enlighten/"$i"
     sudo ninja -C build uninstall
     echo
   done
@@ -350,7 +350,7 @@ uninstall_e26() {
 lo() {
   trap '{ printf "\n$red_bright%s $off%s\n\n" "KEYBOARD INTERRUPT."; exit 130; }' SIGINT
 
-  uninstall_e26
+  uninstall_enlighten
 
   printf "\n\n$red_bright%s %s\n" "Done."
   printf "$red_bright%s $off%s\n\n" 'Candidates for further deletion: Search for "extinguish" and "ebackups" in your home folder.'
