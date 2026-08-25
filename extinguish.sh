@@ -303,7 +303,8 @@ final_stp() {
     find /usr/local/share/locale -name "LC_MESSAGES" -type d 2>/dev/null |
       while read -r i; do
         find "$i" -name "*.mo" |
-          grep -E 'efl|enlightenment|ephoto|evisum|terminology|ecrire|edi|enventor|eflete|forecasts|e-module-penguins|e-module-places' |
+          grep -E -e 'efl|enlightenment|ephoto|evisum|terminology|ecrire|edi|enventor|eflete' \
+            -e 'forecasts|e-module-penguins|e-module-places' |
           while read -r mo_file; do
             sudo rm -f "$mo_file"
           done
@@ -314,7 +315,7 @@ final_stp() {
 # --- Uninstall Enlightenment ecosystem ---
 uninstall_enlighten() {
   if [ "$XDG_CURRENT_DESKTOP" == "Enlightenment" ]; then
-    printf "$red_bright%s $off%s\n\n" "PLEASE LOG IN TO THE DEFAULT DESKTOP ENVIRONMENT TO EXECUTE THIS SCRIPT."
+    printf "$red_bright%s $off%s\n\n" "PLEASE LOG IN TO THE DEFAULT DESKTOP TO RUN THIS SCRIPT."
     beep_exit
     exit 1
   fi
@@ -353,7 +354,8 @@ lo() {
   uninstall_enlighten
 
   printf "\n\n$red_bright%s %s\n" "Done."
-  printf "$red_bright%s $off%s\n\n" 'Candidates for further deletion: Search for "extinguish" and "ebackups" in your home folder.'
+  printf "$red_bright%s $off%s\n\n" \
+    'Candidates for further deletion: Search for "extinguish" and "ebackups" in your home folder.'
 }
 
 lo
