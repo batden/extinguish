@@ -336,10 +336,11 @@ uninstall_enlighten() {
 
   cd "$HOME"
 
-  for i in "${prog_mn[@]}"; do
-    cd "$esrc"/enlighten/"$i"
+  for ((i = ${#prog_mn[@]} - 1; i >= 0; i--)); do
+    printf "$red_bright%s %s$off\n" "Uninstalling" "${prog_mn[i]}..."
+    cd "$esrc/enlighten/${prog_mn[i]}"
     sudo ninja -C build uninstall
-    echo
+    printf "\n"
   done
 
   remov_preq
