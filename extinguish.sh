@@ -23,20 +23,20 @@ ddctl=2.2.7
 
 # --- Enlightenment programs to be removed ---
 prog_mn=(
-  terminology
-  enlightenment
-  ephoto
-  rage
-  evisum
-  express
-  ecrire
-  enventor
-  edi
-  entice
-  enlightenment-module-forecasts
-  enlightenment-module-penguins
-  enlightenment-module-places
   eflete
+  enlightenment-module-places
+  enlightenment-module-penguins
+  enlightenment-module-forecasts
+  entice
+  edi
+  enventor
+  ecrire
+  express
+  evisum
+  rage
+  ephoto
+  enlightenment
+  terminology
   efl
 )
 
@@ -336,9 +336,9 @@ uninstall_enlighten() {
 
   cd "$HOME"
 
-  for ((i = ${#prog_mn[@]} - 1; i >= 0; i--)); do
-    printf "$red_bright%s %s$off\n" "Uninstalling" "${prog_mn[i]}..."
-    cd "$esrc/enlighten/${prog_mn[i]}"
+  for i in "${prog_mn[@]}"; do
+    printf "$red_bright%s %s$off\n" "Uninstalling" "$i..."
+    cd "$esrc/enlighten/$i"
     sudo ninja -C build uninstall
     printf "\n"
   done
