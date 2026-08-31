@@ -22,7 +22,7 @@ scrflr=$HOME/.elluminate
 ddctl=2.2.7
 
 # --- Enlightenment programs to be removed ---
-prog_mn=(
+prog_rm=(
   eflete
   enlightenment-module-places
   enlightenment-module-penguins
@@ -336,7 +336,7 @@ uninstall_enlighten() {
 
   cd "$HOME"
 
-  for i in "${prog_mn[@]}"; do
+  for i in "${prog_rm[@]}"; do
     printf "$red_bright%s %s$off\n" "Uninstalling" "$i..."
     cd "$esrc/enlighten/$i"
     sudo ninja -C build uninstall
