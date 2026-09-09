@@ -245,8 +245,6 @@ del_list() {
 
   cd "$HOME"
   # Remove user files and directories.
-  sudo rm -rf "$esrc"/enlighten
-  rm -rf "$scrfldr"
   rm -rf .e
   rm -rf .e-log*
   rm -rf .elementary
@@ -269,6 +267,8 @@ del_list() {
   rm -rf .config/rage
   rm -rf .config/terminology
   rm -rf .local/bin/elluminate.sh
+  rm -rf "$scrfldr"
+  sudo rm -rf "$esrc"/enlighten
 }
 
 # --- Final cleanup steps ---
@@ -285,11 +285,11 @@ final_stp() {
       sleep 1
       ;;
     *)
+    echo
       rm -rf "$HOME"/.bash_aliases && source "$HOME"/.bashrc
       sleep 1
       ;;
     esac
-    echo
   fi
 
   sudo rm -rf /usr/lib/systemd/user/enlightenment.service
