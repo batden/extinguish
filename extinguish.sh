@@ -183,6 +183,7 @@ del_list() {
   cd /usr/local/lib/x86_64-linux-gnu/pkgconfig
   sudo rm -rf ecore*
   sudo rm -rf efl*
+  sudo rm -rf elua*
 
   cd /usr/local/share
   sudo rm -rf ecore*
