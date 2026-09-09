@@ -18,7 +18,7 @@ italic="\e[3m"
 off="\e[0m"
 
 # --- Paths ---
-scrflr=$HOME/.elluminate
+scrfldr=$HOME/.elluminate
 ddctl=2.2.7
 
 # --- Enlightenment programs to be removed ---
@@ -246,7 +246,7 @@ del_list() {
   cd "$HOME"
   # Remove user files and directories.
   sudo rm -rf "$esrc"/enlighten
-  rm -rf "$scrflr"
+  rm -rf "$scrfldr"
   rm -rf .e
   rm -rf .e-log*
   rm -rf .elementary
