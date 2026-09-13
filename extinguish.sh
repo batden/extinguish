@@ -71,7 +71,7 @@ remov_preq() {
     echo
   fi
 
-ddctl_ver=("$ddctl" "2.2.6" "2.2.7")
+ddctl_ver=("$ddctl" "3.0.0" "3.0.1")
 
 for i in "${ddctl_ver[@]}"; do
   if [ -d "$esrc/ddcutil-$i" ]; then
