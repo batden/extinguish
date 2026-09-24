@@ -19,7 +19,7 @@ off="\e[0m"
 
 # --- Paths ---
 scrfldr=$HOME/.elluminate
-ddctl=3.0.1
+ddctl=3.0.2
 
 # --- Enlightenment programs to be removed ---
 prog_rm=(
@@ -71,7 +71,7 @@ remov_preq() {
     echo
   fi
 
-ddctl_ver=("$ddctl" "3.0.0" "3.0.1")
+ddctl_ver=("$ddctl" "3.0.0" "3.0.1" "3.0.2")
 
 for i in "${ddctl_ver[@]}"; do
   if [ -d "$esrc/ddcutil-$i" ]; then
