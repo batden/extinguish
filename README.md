@@ -4,7 +4,7 @@ Use this script to uninstall Enlightenment and related applications.
 
 ## Get started
 
-First, clone this repository:
+First, clone this repository if you have not done so previously:
 
 ```bash
 git clone https://github.com/batden/extinguish.git .extinguish
