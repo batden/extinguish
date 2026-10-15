@@ -1,9 +1,10 @@
 #!/bin/bash
 # shellcheck disable=SC1091 disable=SC2164
 
-# This script will help you uninstall Enlightenment and related applications cleanly and safely.
-# Note that the binary dependencies (dev packages) are preserved for system consistency.
-# There is no safe way to remove them automatically, without close supervision by the user.
+# This script will uninstall Enlightenment and related applications cleanly and safely.
+# Note that the binary dependencies, mainly development packages, are preserved for
+# system consistency. It is not possible to remove them automatically without
+# close supervision by the user.
 
 # EXTINGUISH.SH is licensed under a Creative Commons Attribution 4.0 International License,
 # in memory of Aaron Swartz.
