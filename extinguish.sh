@@ -343,7 +343,7 @@ uninstall_enlighten() {
   done
 
   remov_preq
-  del_list >/dev/null
+  del_list &>/dev/null
   final_stp
 }
 
