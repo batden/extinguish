@@ -57,7 +57,7 @@ remov_preq() {
       sudo rm -rf /usr/local/lib/x86_64-linux-gnu/pkgconfig/rlottie.pc
       ;;
     n | N)
-      printf "\n$italic%s $off%s\n\n" "(do not remove rlottie... OK)"
+      printf "\n$italic%s $off%s\n\n" "(Do not remove rlottie... OK)"
       ;;
     *)
       cd "$esrc/rlottie"
@@ -84,7 +84,7 @@ for i in "${ddctl_ver[@]}"; do
       sudo rm -rf /usr/local/share/ddcutil
       ;;
     n | N)
-      printf "\n$italic%s $off%s\n\n" "(do not remove ddcutil-$i... OK)"
+      printf "\n$italic%s $off%s\n\n" "(Do not remove ddcutil-$i... OK)"
       ;;
     *)
       cd "$esrc/ddcutil-$i"
@@ -280,7 +280,7 @@ final_stp() {
       sleep 1
       ;;
     n | N)
-      printf "\n$italic%s $off%s\n\n" "(do not delete .bash_aliases... OK)"
+      printf "\n$italic%s $off%s\n\n" "(Do not delete .bash_aliases... OK)"
       sleep 1
       ;;
     *)
